@@ -6,32 +6,28 @@ const capabilities = [
     title: "Natural AI dialogue",
     description:
       "Understand intent, keep context, and turn messy human requests into useful answers, because apparently that is now a product category.",
-    icon: "✦",
-    glow: "from-cyan-400/24 to-blue-500/8"
+    icon: "✦"
   },
   {
     eyebrow: "Code",
     title: "Code generation",
     description:
       "Generate, explain, refactor, and debug code across modern stacks with context-aware reasoning for teams that prefer shipping over suffering.",
-    icon: "</>",
-    glow: "from-violet-400/24 to-fuchsia-500/8"
+    icon: "</>"
   },
   {
     eyebrow: "Documents",
     title: "Document analysis",
     description:
       "Extract insights from reports, contracts, research, tables, and internal knowledge without turning every employee into a PDF archaeologist.",
-    icon: "▤",
-    glow: "from-emerald-400/24 to-teal-500/8"
+    icon: "▤"
   },
   {
     eyebrow: "Multimodal",
     title: "Multimodal understanding",
     description:
       "Reason across text, images, charts, screenshots, and structured data to support richer workflows and less tab-switching chaos.",
-    icon: "◈",
-    glow: "from-amber-300/24 to-orange-500/8"
+    icon: "◈"
   }
 ];
 
@@ -122,8 +118,7 @@ const footerGroups = [
 function Logo() {
   return (
     <a href="#" className="flex items-center gap-3" aria-label="ChatGPT home">
-      <div className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-2xl border border-slate-200 bg-white/70 shadow-glow">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.42),transparent_35%),linear-gradient(135deg,rgba(56,189,248,0.38),rgba(168,85,247,0.32))]" />
+      <div className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-2xl border border-slate-300 bg-slate-950 shadow-sm">
         <div className="relative h-5 w-5 rounded-full border border-white/80">
           <span className="absolute left-1/2 top-[-7px] h-3 w-px -translate-x-1/2 bg-white/80" />
           <span className="absolute bottom-[-7px] left-1/2 h-3 w-px -translate-x-1/2 bg-white/80" />
@@ -141,10 +136,10 @@ function Button({ children, variant = "primary", className = "" }) {
     "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-200";
   const styles =
     variant === "primary"
-      ? "bg-slate-950 text-white hover:bg-slate-800 shadow-[0_18px_50px_rgba(15,23,42,0.18)]"
+      ? "bg-slate-950 text-white hover:bg-slate-800 shadow-sm"
       : variant === "dark"
-        ? "bg-amber-300 text-slate-950 border border-amber-200 hover:bg-amber-200 shadow-[0_14px_34px_rgba(245,158,11,0.22)]"
-        : "border border-slate-300/70 bg-white/70 text-slate-800 hover:border-amber-300 hover:bg-amber-50";
+        ? "bg-amber-300 text-slate-950 border border-amber-200 hover:bg-amber-200 shadow-sm"
+        : "border border-slate-300 bg-white text-slate-800 hover:border-slate-400 hover:bg-slate-50";
 
   return <button className={`${base} ${styles} ${className}`}>{children}</button>;
 }
@@ -175,7 +170,7 @@ function Header() {
             <Button className="px-4 py-2.5">Get started</Button>
           </div>
 
-          <button className="rounded-full border border-slate-200/90 px-4 py-2 text-sm font-medium text-slate-200 md:hidden">
+          <button className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 md:hidden">
             Menu
           </button>
         </nav>
@@ -194,31 +189,30 @@ function HeroVisual() {
 
   return (
     <div className="relative mx-auto mt-12 h-[520px] w-full max-w-[560px] lg:mt-0">
-      <div className="absolute inset-8 rounded-[3rem] bg-cyan-400/10 blur-3xl" />
-      <div className="absolute inset-0 rounded-[3rem] border border-slate-200/80 bg-white/[0.025]" />
+      <div className="absolute inset-0 rounded-[3rem] border border-slate-200 bg-white" />
 
-      <div className="glass absolute left-6 top-8 z-10 w-[72%] rounded-3xl p-4 shadow-card animate-float">
+      <div className="glass absolute left-6 top-8 z-10 w-[72%] rounded-3xl p-4 shadow-sm">
         <div className="mb-4 flex items-center justify-between">
           <div className="flex gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-red-300/80" />
-            <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/80" />
+            <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
           </div>
-          <span className="rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-[11px] font-medium text-cyan-900">
+          <span className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-[11px] font-medium text-slate-700">
             Live reasoning
           </span>
         </div>
 
         <div className="space-y-3">
-          <div className="max-w-[78%] rounded-2xl rounded-tl-sm bg-white/70 px-4 py-3 text-sm text-slate-200">
+          <div className="max-w-[78%] rounded-2xl rounded-tl-sm bg-slate-100 px-4 py-3 text-sm text-slate-700">
             Summarize this product report and find the risk factors.
           </div>
-          <div className="ml-auto max-w-[86%] rounded-2xl rounded-tr-sm border border-cyan-200/20 bg-cyan-300/10 px-4 py-3 text-sm text-cyan-900">
+          <div className="ml-auto max-w-[86%] rounded-2xl rounded-tr-sm border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800">
             Found 6 risks, 3 revenue drivers, and 2 inconsistent metrics.
           </div>
           <div className="grid grid-cols-3 gap-2 pt-1">
             {["Risk", "Revenue", "Action"].map((item, index) => (
-              <div key={item} className="rounded-2xl border border-slate-200/80 bg-white/70 p-3">
+              <div key={item} className="rounded-2xl border border-slate-200 bg-white p-3">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-slate-500">
                   0{index + 1}
                 </div>
@@ -229,16 +223,15 @@ function HeroVisual() {
         </div>
       </div>
 
-      <div className="glass absolute bottom-10 right-4 z-20 w-[76%] overflow-hidden rounded-3xl p-4 shadow-card animate-floatSlow">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent" />
+      <div className="glass absolute bottom-10 right-4 z-20 w-[76%] overflow-hidden rounded-3xl p-4 shadow-sm">
         <div className="mb-3 flex items-center justify-between">
           <span className="font-mono text-xs text-slate-600">assistant.generate()</span>
-          <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-800">
+          <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-800">
             200 OK
           </span>
         </div>
 
-        <pre className="code-scroll overflow-x-auto rounded-2xl border border-slate-200/80 bg-slate-950/90 p-4 font-mono text-[12px] leading-6 text-slate-300">
+        <pre className="code-scroll overflow-x-auto rounded-2xl border border-slate-200 bg-slate-950 p-4 font-mono text-[12px] leading-6 text-slate-300">
 {`const response = await chatgpt.create({
   model: "gpt-next",
   input: {
@@ -250,24 +243,20 @@ function HeroVisual() {
         </pre>
       </div>
 
-      <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full hero-orb opacity-90 shadow-[0_0_120px_rgba(56,189,248,0.34)] animate-pulseGlow" />
+      <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full hero-orb opacity-90" />
 
-      <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200/15" />
-      <div className="absolute left-1/2 top-1/2 h-[410px] w-[410px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-violet-200/10" />
+      <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-slate-200" />
+      <div className="absolute left-1/2 top-1/2 h-[410px] w-[410px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-slate-100" />
 
       {nodes.map((node) => (
         <div
           key={node.label}
-          className="glass-soft absolute z-30 rounded-2xl px-4 py-2 text-xs font-semibold text-slate-100"
+          className="glass-soft absolute z-30 rounded-2xl px-4 py-2 text-xs font-semibold text-slate-700"
           style={{ left: node.x, top: node.y }}
         >
           {node.label}
         </div>
       ))}
-
-      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[3rem]">
-        <div className="scan-line absolute left-0 right-0 h-28 animate-scan" />
-      </div>
     </div>
   );
 }
@@ -276,18 +265,17 @@ function Hero() {
   return (
     <section className="relative overflow-hidden px-4 pb-20 pt-36 sm:px-6 lg:px-8 lg:pb-28 lg:pt-44">
       <div className="bg-grid absolute inset-0 -z-10" />
-      <div className="absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-300/20 blur-[120px]" />
 
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-slate-200/80 bg-white/70 px-4 py-2 text-sm text-slate-600 backdrop-blur-xl">
-            <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_20px_rgba(110,231,183,0.8)]" />
+          <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">
+            <span className="h-2 w-2 rounded-full bg-emerald-300" />
             Next-generation assistant platform for everyone
           </div>
 
           <h1 className="max-w-5xl text-5xl font-semibold leading-[0.96] tracking-[-0.065em] text-slate-950 sm:text-6xl md:text-7xl lg:text-[86px]">
             AI that feels lighter,
-            <span className="gradient-text"> brighter, and faster.</span>
+            <span className="flat-text"> brighter, and faster.</span>
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
@@ -303,15 +291,15 @@ function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-slate-600">
             <div className="flex items-center gap-2">
-              <span className="text-cyan-700">●</span>
+              <span className="text-slate-700">●</span>
               Light workspace experience
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-violet-700">●</span>
+              <span className="text-slate-700">●</span>
               Responsive by default
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-emerald-800">●</span>
+              <span className="text-slate-700">●</span>
               Built with React + Tailwind
             </div>
           </div>
@@ -326,7 +314,7 @@ function Hero() {
 function SectionHeading({ eyebrow, title, description, align = "center" }) {
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700/90">
+      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
         {eyebrow}
       </p>
       <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
@@ -353,12 +341,9 @@ function Capabilities() {
               key={item.title}
               className="glass-soft card-hover group relative min-h-[300px] overflow-hidden rounded-[2rem] p-6"
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${item.glow} opacity-0 transition duration-300 group-hover:opacity-100`}
-              />
               <div className="relative">
                 <div className="mb-8 flex items-center justify-between">
-                  <div className="grid h-13 w-13 place-items-center rounded-2xl border border-slate-200/90 bg-white/70 text-lg font-semibold text-slate-950">
+                  <div className="grid h-13 w-13 place-items-center rounded-2xl border border-slate-200 bg-white text-lg font-semibold text-slate-950">
                     {item.icon}
                   </div>
                   <span className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
@@ -369,10 +354,10 @@ function Capabilities() {
                 <h3 className="text-xl font-semibold tracking-tight text-slate-950">{item.title}</h3>
                 <p className="mt-4 leading-7 text-slate-600">{item.description}</p>
 
-                <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-white/14 to-transparent" />
+                <div className="mt-8 h-px w-full bg-slate-200" />
                 <div className="mt-5 flex items-center justify-between text-sm text-slate-600">
                   <span>Available now</span>
-                  <span className="text-cyan-700 transition group-hover:translate-x-1">→</span>
+                  <span className="text-slate-700 transition group-hover:translate-x-1">→</span>
                 </div>
               </div>
             </article>
@@ -401,12 +386,12 @@ function Solutions() {
               {scenarios.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-[1.5rem] border border-slate-200/80 bg-white/70 p-5 transition hover:border-cyan-200/30 hover:bg-white/70"
+                  className="rounded-[1.5rem] border border-slate-200 bg-white p-5 transition hover:border-slate-300 hover:bg-slate-50"
                 >
                   <div className="mb-8 flex items-start justify-between gap-4">
                     <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
                     <div className="text-right">
-                      <div className="subtle-gradient-text text-2xl font-semibold tracking-tight">
+                      <div className="text-2xl font-semibold tracking-tight text-slate-950">
                         {item.stat}
                       </div>
                       <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-slate-500">
@@ -430,14 +415,13 @@ function Metrics() {
     <section className="px-4 py-14 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="glass relative overflow-hidden rounded-[2.5rem] p-6 sm:p-8 lg:p-10">
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/80 to-transparent" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {metrics.map(([value, label]) => (
               <div
                 key={label}
-                className="rounded-[1.75rem] border border-slate-200/80 bg-white/70 p-6 text-center"
+                className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-center"
               >
-                <div className="gradient-text text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                <div className="text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
                   {value}
                 </div>
                 <div className="mt-3 text-sm uppercase tracking-[0.2em] text-slate-500">
@@ -455,7 +439,6 @@ function Metrics() {
 function Developers() {
   return (
     <section id="developers" className="relative px-4 py-24 sm:px-6 lg:px-8">
-      <div className="absolute right-0 top-1/3 -z-10 h-80 w-80 rounded-full bg-violet-400/10 blur-[110px]" />
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>
           <SectionHeading
@@ -470,9 +453,9 @@ function Developers() {
               (item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-200/80 bg-white/70 px-4 py-3 text-sm font-medium text-slate-200"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700"
                 >
-                  <span className="mr-2 text-cyan-700">✓</span>
+                  <span className="mr-2 text-slate-700">✓</span>
                   {item}
                 </div>
               )
@@ -485,26 +468,26 @@ function Developers() {
           </div>
         </div>
 
-        <div className="glass overflow-hidden rounded-[2.2rem] shadow-card">
-          <div className="flex items-center justify-between border-b border-slate-200/80 bg-white/60 px-5 py-4">
+        <div className="glass overflow-hidden rounded-[2.2rem] shadow-sm">
+          <div className="flex items-center justify-between border-b border-slate-200 bg-white px-5 py-4">
             <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full bg-red-300/80" />
-              <span className="h-3 w-3 rounded-full bg-amber-300/80" />
-              <span className="h-3 w-3 rounded-full bg-emerald-300/80" />
+              <span className="h-3 w-3 rounded-full bg-red-300" />
+              <span className="h-3 w-3 rounded-full bg-amber-300" />
+              <span className="h-3 w-3 rounded-full bg-emerald-300" />
             </div>
             <span className="font-mono text-xs text-slate-500">console.chatgpt.dev</span>
           </div>
 
           <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="border-b border-slate-200/80 p-5 lg:border-b-0 lg:border-r">
+            <div className="border-b border-slate-200 p-5 lg:border-b-0 lg:border-r">
               <div className="mb-4 flex items-center justify-between">
                 <span className="text-sm font-semibold text-slate-950">API request</span>
-                <span className="rounded-full bg-cyan-300/10 px-3 py-1 text-xs text-cyan-900">
+                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700">
                   JavaScript
                 </span>
               </div>
 
-              <pre className="code-scroll overflow-x-auto rounded-2xl border border-slate-200/80 bg-slate-950/90 p-5 font-mono text-[12px] leading-6 text-slate-300">
+              <pre className="code-scroll overflow-x-auto rounded-2xl border border-slate-200 bg-slate-950 p-5 font-mono text-[12px] leading-6 text-slate-300">
 {`import ChatGPT from "@chatgpt/sdk";
 
 const client = new ChatGPT({
@@ -536,27 +519,25 @@ for await (const event of result) {
                   <div key={label}>
                     <div className="mb-2 flex justify-between text-xs">
                       <span className="text-slate-600">{label}</span>
-                      <span className="text-slate-200">{value}</span>
+                      <span className="text-slate-700">{value}</span>
                     </div>
-                    <div className="h-2 overflow-hidden rounded-full bg-white/8">
-                      <div
-                        className={`h-full ${width} rounded-full bg-gradient-to-r from-cyan-300 to-violet-300`}
-                      />
+                    <div className="h-2 overflow-hidden rounded-full bg-slate-100">
+                      <div className={`h-full ${width} rounded-full bg-slate-700`} />
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-7 rounded-2xl border border-emerald-300/15 bg-emerald-300/8 p-4">
+              <div className="mt-7 rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
                 <div className="text-sm font-semibold text-emerald-900">System healthy</div>
                 <p className="mt-2 text-sm leading-6 text-emerald-900/70">
                   All regions operational. 24 active deployments. Zero incidents in the last 7 days.
                 </p>
               </div>
 
-              <div className="mt-4 rounded-2xl border border-slate-200/80 bg-white/70 p-4">
+              <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4">
                 <div className="font-mono text-xs text-slate-500">latest event</div>
-                <div className="mt-2 font-mono text-sm text-cyan-900">
+                <div className="mt-2 font-mono text-sm text-slate-800">
                   response.completed · 12ms ago
                 </div>
               </div>
@@ -584,7 +565,7 @@ function Trust() {
               key={item.title}
               className="glass-soft card-hover min-h-[260px] rounded-[2rem] p-6"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-2xl border border-slate-200/90 bg-white/70 text-xl text-cyan-900">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl border border-slate-200 bg-white text-xl text-slate-800">
                 {item.icon}
               </div>
               <h3 className="mt-8 text-lg font-semibold text-slate-950">{item.title}</h3>
@@ -601,13 +582,10 @@ function PricingBand() {
   return (
     <section id="pricing" className="px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="relative overflow-hidden rounded-[2.7rem] border border-slate-200/90 bg-gradient-to-br from-white/[0.12] via-white/[0.045] to-cyan-300/[0.08] p-8 shadow-card sm:p-10 lg:p-14">
-          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan-300/20 blur-[90px]" />
-          <div className="absolute -bottom-28 left-1/3 h-72 w-72 rounded-full bg-violet-400/16 blur-[100px]" />
-
+        <div className="relative overflow-hidden rounded-[2.7rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10 lg:p-14">
           <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
                 Simple plans
               </p>
               <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
@@ -632,7 +610,7 @@ function PricingBand() {
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-200/80 px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="border-t border-slate-200 px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
           <div>
@@ -646,7 +624,7 @@ function Footer() {
                 <a
                   key={item}
                   href="#"
-                  className="grid h-10 w-10 place-items-center rounded-full border border-slate-200/80 bg-white/60 text-sm font-semibold text-slate-600 transition hover:border-cyan-200/40 hover:text-slate-950"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-950"
                 >
                   {item}
                 </a>
@@ -672,7 +650,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-slate-200/80 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 ChatGPT. All rights reserved.</p>
           <div className="flex gap-5">
             <a href="#" className="transition hover:text-slate-600">
